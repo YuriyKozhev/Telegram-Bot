@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
 import requests
 from time import sleep
 import datetime
@@ -30,15 +36,21 @@ class BotHandler:
             last_update = None
 
         return last_update
-    
+
+
+# In[2]:
+
+
 token = '1064687581:AAFrNcD-MWTOROzofaGHUBr0HcqANeAVuYE'
+
+
+# In[3]:
+
 
 bot = BotHandler(token)  
 
 def main():  
     new_offset = None
-    today = now.day
-    hour = now.hour
 
     while True:
         bot.get_updates(new_offset)
@@ -55,9 +67,29 @@ def main():
         
         bot.send_message(last_chat_id, datetime.datetime.now().strftime("%d-%b-%Y (%H:%M:%S)"))
         new_offset = last_update_id + 1
-        
-if __name__ == '__main__':  
-    try:
-        main()
-    except KeyboardInterrupt:
-        exit()
+
+
+# In[4]:
+
+
+# if __name__ == '__main__':  
+#     try:
+#         main()
+#     except KeyboardInterrupt:
+#         exit()
+
+
+# In[ ]:
+
+
+try:
+    main()
+except KeyboardInterrupt:
+    pass
+
+
+# In[ ]:
+
+
+
+
