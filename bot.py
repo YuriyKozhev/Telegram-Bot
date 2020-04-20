@@ -41,7 +41,7 @@ class BotHandler:
 # In[2]:
 
 
-token = '1064687581:AAFrNcD-MWTOROzofaGHUBr0HcqANeAVuYE'
+token = TOKEN
 
 
 # In[3]:
