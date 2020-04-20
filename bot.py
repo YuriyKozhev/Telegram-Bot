@@ -7,6 +7,7 @@
 import requests
 from time import sleep
 import datetime
+import os
 
 class BotHandler:
 
@@ -41,7 +42,7 @@ class BotHandler:
 # In[2]:
 
 
-token = TOKEN
+token = os.environ['TOKEN']
 
 
 # In[3]:
