@@ -8,7 +8,7 @@ import requests
 from time import sleep
 import datetime
 import psycopg2
-import os
+from urllib.parse import urlparse 
 
 class BotHandler:
     
@@ -58,7 +58,18 @@ class UpdateHandler:
         
         args_to_str = lambda args: "(" + ''.join((["'" + str(arg) + "'" + ', ' for arg in args]))[:-2]  + ')'
         
-        conn = psycopg2.connect(host=database_url)
+        result = urlparse(database_url)
+        username = result.username
+        password = result.password
+        database = result.path[1:]
+        hostname = result.hostname
+        
+        conn = psycopg2.connect(
+            database = database,
+            user = username,
+            password = password,
+            host = hostname
+        )
         cur = conn.cursor()
         
         deadlines_table = 'deadlines'
@@ -113,8 +124,18 @@ handler.initialize(bot)
 #class DatabasesHandler
 
 def init_databases():
-    conn = psycopg2.connect(host=database_url)
+    result = urlparse(database_url)
+    username = result.username
+    password = result.password
+    database = result.path[1:]
+    hostname = result.hostname
 
+    conn = psycopg2.connect(
+        database = database,
+        user = username,
+        password = password,
+        host = hostname
+    )
     cur = conn.cursor()
 
     deadlines_table = 'deadlines'
