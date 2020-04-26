@@ -8,6 +8,7 @@ import requests
 from time import sleep
 import datetime
 import psycopg2
+import os
 
 class BotHandler:
     
