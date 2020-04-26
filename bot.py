@@ -9,6 +9,7 @@ from time import sleep
 import datetime
 import psycopg2
 from urllib.parse import urlparse 
+import os
 
 class BotHandler:
     
