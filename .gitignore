@@ -1,2 +1,3 @@
-bot_.py
 .ipynb_checkpoints
+__pycache__/
+LOCAL*
