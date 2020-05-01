@@ -12,7 +12,7 @@ import psycopg2
 # In[2]:
 
 
-from config import ServerConfig
+from config import Config, ServerConfig
 #from LOCAL_config import Config, LocalConfig, ProductionConfig
 
 config = ServerConfig()
