@@ -74,7 +74,8 @@ class UpdateHandler:
         
         deadlines_table = self.db_handler.get_table('deadlines')
         
-        expiration_time = 'now()'
+        #expiration_time = 'now()'
+        expiration_time = datetime.datetime.now().strftime("%d-%b-%Y (%H:%M:%S)")
         deadline = ['DEFAULT', chat_id, expiration_time, chat_text]
         
         self.db_handler.insert_row(deadlines_table, deadline)
