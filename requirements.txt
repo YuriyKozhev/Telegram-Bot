@@ -4,4 +4,4 @@ idna==2.9
 psycopg2==2.8.5
 psycopg2-binary==2.8.5
 requests==2.23.0
-urllib3==1.25.9
+urllib3==1.26.5
